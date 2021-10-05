@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{name}}</h1>
+<ul>
+{% for tech, x in streams.items %}
+{% if tech == name%}
+<li><b>{{ x.description}}<b></li>
+{% for streams in x.top_5%}
+<li><b>{{ streams }}<b></li>
+{% endfor %}
+{% endif%}
+</ul>
+
+{% endfor %}{% endblock content %}
